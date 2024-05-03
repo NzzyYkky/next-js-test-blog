@@ -11,3 +11,7 @@ export default function Blog() {
 		</Container>
 	);
 }
+
+export async function getStaticProps() {
+
+}
