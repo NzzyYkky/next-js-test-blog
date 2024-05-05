@@ -12,7 +12,6 @@ import { eyecatchLocal } from 'lib/constant';
 import { getPlaiceholder } from 'plaiceholder';
 import prevNextPost from 'lib/prev-next-post';
 import Pagination from 'components/pagination';
-import { notFound } from 'next/navigation';
 
 export default function Post({
    title,

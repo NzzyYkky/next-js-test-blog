@@ -1,12 +1,20 @@
-import { getAllCategories } from 'lib/api';
+import { getAllCategories, getAllPostsByCategories } from 'lib/api';
 import Meta from 'components/meta';
 import Container from 'components/container';
 import PostHeader from 'components/post-header';
+import { eyecatchLocal } from 'lib/constant';
+import { getPlaiceholder } from 'plaiceholder';
+import Posts from 'components/posts';
 
-export default function Category({ name }) {
+export default function Category({ name, posts }) {
    return (
       <Container>
+         <Meta
+            pageTitle={name}
+            pageDesc={`${name}に関する記事`}
+         />
          <PostHeader title={name} subtitle="Blog Category" />
+         <Posts posts={posts} />
       </Container>
    );
 }
@@ -26,11 +34,21 @@ export async function getStaticProps(context) {
    const allCats = await getAllCategories();
    const cat = allCats.find(({ id }) => id === catId);
 
-   console.log('cat', catId);
+   const posts = await getAllPostsByCategories(cat.id);
+
+   for (const post of posts) {
+      if (!post.hasOwnProperty('eyecatch')) {
+         post.eyecatch = eyecatchLocal;
+      }
+
+      const { base64 } = await getPlaiceholder(post.eyecatch.url);
+      post.eyecatch.blurDataURL = base64;
+   }
 
    return {
       props: {
-         name: cat.name
+         name: cat.name,
+         posts: posts
       }
    }
 }
