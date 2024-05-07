@@ -20,7 +20,7 @@ export default function Meta({ pageTitle, pageDesc, pageImage, pageImageW, pageI
    return (
       <Head>
          <title>
-            k{title}
+            {title}
          </title>
          <meta property="og:title" content={title} />
 
