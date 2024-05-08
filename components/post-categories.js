@@ -10,7 +10,7 @@ export default function PostCategories({ categories }) {
             {
                categories.map(({ id, name }) => (
                   <li key={id}>
-                     <Link href={`/category/${id}`}>{name}</Link>
+                     <Link href={`/blog/category/${id}`}>{name}</Link>
                   </li>
                ))
             }
