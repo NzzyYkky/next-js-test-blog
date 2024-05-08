@@ -1,16 +1,10 @@
 import styles from 'styles/accordion.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons'
-import { useState, useRef } from 'react'
+import { useAccordionAction } from 'hooks/UseAccordionAction';
 
 export default function Accordion({ heading, children }) {
-   const [textIsOpen, setTextIsOpen] = useState(false);
-
-   const toggleText = () => {
-      setTextIsOpen(prev => !prev)
-   }
-
-   const refText = useRef(null);
+   const { textIsOpen, toggleText, refText } = useAccordionAction();
 
    return (
       <div className={textIsOpen ? styles.open : styles.close}>

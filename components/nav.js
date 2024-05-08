@@ -1,17 +1,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from 'styles/nav.module.css';
+import { useHamburgerToggle } from 'hooks/useHamburgerToggle'
 
 export default function Nav() {
-	const [navIsOpen, setNavIsOpen] = useState(false)
-
-	const toggleNav = () => {
-		setNavIsOpen(prev => !prev)
-	}
-
-	const closeNav = () => {
-		setNavIsOpen(false)
-	}
+	const { navIsOpen, toggleNav, closeNav } = useHamburgerToggle()
 
 	const obj = [
 		{
