@@ -1,7 +1,7 @@
 import styles from 'styles/accordion.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons'
-import { useAccordionAction } from 'hooks/UseAccordionAction';
+import { useAccordionAction } from 'hooks/useAccordionAction';
 
 export default function Accordion({ heading, children }) {
    const { textIsOpen, toggleText, refText } = useAccordionAction();
