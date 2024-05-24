@@ -1,11 +1,11 @@
-import Meta from 'components/meta';
-import Container from 'components/container';
-import Hero from 'components/hero';
+import Meta from 'components/Meta';
+import Container from 'components/Container';
+import Hero from 'components/Hero';
 import { getAllPosts } from 'lib/api';
 import { eyecatchLocal } from 'lib/constant';
 import { getPlaiceholder } from 'plaiceholder';
 import Posts from 'components/posts';
-import Pagination from 'components/pagination';
+import Pagination from 'components/Pagination';
 
 export default function Home({ posts }) {
 	return (

@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from 'styles/nav.module.css';
-import { useHamburgerToggle } from 'hooks/useHamburgerToggle'
+import { useHamburgerToggle } from 'hooks/useHamburgerToggle';
 
-export default function Nav() {
-	const { navIsOpen, toggleNav, closeNav } = useHamburgerToggle()
+export default function Nav(): JSX.Element {
+	const { navIsOpen, toggleNav, closeNav } = useHamburgerToggle();
 
 	const obj = [
 		{
@@ -24,23 +24,21 @@ export default function Nav() {
 		<nav className={navIsOpen ? styles.open : styles.close}>
 			{navIsOpen && (
 				<style jsx global>
-					{
-						`
-							@media (max-width: 767px) {
-								body {
-									overflow: clip;
-									position: fixed;
-									width: 100%;
-								}
+					{`
+						@media (max-width: 767px) {
+							body {
+								overflow: clip;
+								position: fixed;
+								width: 100%;
 							}
-						`
-					}
+						}
+					`}
 				</style>
 			)}
 
 			<button className={styles.btn} onClick={toggleNav}>
 				<span className={styles.bar}></span>
-				<span className='sr-only'>MENU</span>
+				<span className="sr-only">MENU</span>
 			</button>
 			<ul className={styles.list}>
 				{obj.map((item, index) => {

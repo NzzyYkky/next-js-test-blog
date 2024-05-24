@@ -3,7 +3,7 @@ import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 import { faSun } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import 'styles/globals.css';
-import Layout from 'components/layout';
+import Layout from 'components/Layout';
 
 
 import '@fortawesome/fontawesome-svg-core/styles.css';

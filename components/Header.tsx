@@ -1,9 +1,9 @@
-import Logo from 'components/logo';
-import Nav from 'components/nav';
+import Logo from 'components/Logo';
+import Nav from 'components/Nav';
 import styles from 'styles/header.module.css';
-import Container from 'components/container';
+import Container from 'components/Container';
 
-export default function Header() {
+export default function Header(): JSX.Element {
 	return (
 		<header>
 			<Container large>

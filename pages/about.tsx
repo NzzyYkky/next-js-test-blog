@@ -1,17 +1,26 @@
-import Meta from 'components/meta';
-import Container from 'components/container';
-import Contact from 'components/contact';
-import Hero from 'components/hero';
+import Meta from 'components/Meta';
+import Container from 'components/Container';
+import Contact from 'components/Contact';
+import Hero from 'components/Hero';
 import PostBody from 'components/post-body';
-import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from 'components/two-column';
-import eyecath from 'images/about_image.png'
-import Accordion from 'components/accordion';
+import {
+	TwoColumn,
+	TwoColumnMain,
+	TwoColumnSidebar,
+} from 'components/two-column';
+import eyecath from 'images/about_image.png';
+import Accordion from 'components/Accordion';
 
 export default function About() {
-
 	return (
 		<Container>
-			<Meta pageTitle="About" pageDesc="Aboutページになります。" pageImage={eyecath.src} pageImageW={eyecath.width} pageImageH={eyecath.height} />
+			<Meta
+				pageTitle="About"
+				pageDesc="Aboutページになります。"
+				pageImage={eyecath.src}
+				pageImageW={eyecath.width}
+				pageImageH={eyecath.height}
+			/>
 			<Hero title="About" subtitle="About development activities." />
 			<TwoColumn>
 				<TwoColumnMain>
@@ -32,17 +41,17 @@ export default function About() {
 						</p>
 
 						<h2>FAQ</h2>
-						<Accordion heading='プログラミングのポイントについて'>
+						<Accordion heading="プログラミングのポイントについて">
 							<p>
 								プログラミングのポイントは、作りたいものを作ることです。楽しいことから思いつき、目標とゴールを決め、そこに向かってさまざまな課題を設定していきながら、プログラムを作っていきます。
 							</p>
 						</Accordion>
-						<Accordion heading='古代語の解読について'>
+						<Accordion heading="古代語の解読について">
 							<p>
 								古代語を解読するのに必要なのは、書かれた文字そのものだけです。古代の世界観や思考方法。それらを読み取ってこそ古代の世界観が理解できてきます。
 							</p>
 						</Accordion>
-						<Accordion heading='公開リポジトリの活用について'>
+						<Accordion heading="公開リポジトリの活用について">
 							<p>
 								公開リポジトリを活用すると、全世界のどこからでもアクセスし、開発者が関連するプロジェクトのタスクを利用することができます。
 							</p>

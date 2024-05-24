@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import styles from 'styles/logo.module.css';
 
-export default function Logo({ boxOn = false }) {
+type LogoProps = {
+	boxOn?: boolean;
+};
+
+export default function Logo({ boxOn = false }: LogoProps): JSX.Element {
 	return (
 		<div>
 			<Link href="/" legacyBehavior>
